@@ -1,6 +1,6 @@
 %define name    apachetop
-%define version 0.12.5
-%define release 3mdk
+%define version 0.12.6
+%define release %mkrel 1
 
 Summary:	Utility to display Apache logs with a top-like interface
 Name:		%name
@@ -8,12 +8,16 @@ Version:	%version
 Release:	%release
 License:	BSD
 Group:		Monitoring
-URL:		http://clueful.shagged.org/apachetop/
-Source0:	http://clueful.shagged.org/apachetop/files/%name-%version.tar.bz2
+URL:		http://www.webta.org/projects/apachetop/
+Source0:	http://www.webta.org/apachetop/%name-%version.tar.bz2
 # mandrakeize default logfile
 Patch1:		%name-0.7.logfile.patch.bz2
+# support logfiles over 2GB (from Debian)
+Patch2:		apachetop-0.12.5-large_logfile.patch
+# gcc4.1 fixes (from Debian)
+Patch3:		apachetop-0.12.6-gcc41.patch
 BuildRoot:	%_tmppath/%name-buildroot
-BuildRequires:	ncurses-devel m4 pcre-devel adns-devel fam-devel readline-devel
+BuildRequires:	ncurses-devel m4 pcre-devel adns-devel fam-devel readline-devel autoconf2.5
 Requires:	apache
 
 %description
@@ -27,9 +31,11 @@ fields in combined) and generates human-parsable output in realtime.
 %prep
 %setup -q
 %patch1 -p1 -b .log
+%patch2 -p1 -b .large
+%patch3 -p1 -b .gcc41
 
 %build
-%configure
+%configure2_5x
 %make
 
 
