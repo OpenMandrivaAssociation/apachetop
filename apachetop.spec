@@ -10,7 +10,7 @@ License:	BSD
 Group:		Monitoring
 URL:		http://www.webta.org/projects/apachetop/
 Source0:	http://www.webta.org/apachetop/%name-%version.tar.bz2
-# mandrakeize default logfile
+# mandrivaize default logfile
 Patch1:		%name-0.7.logfile.patch.bz2
 # support logfiles over 2GB (from Debian)
 Patch2:		apachetop-0.12.5-large_logfile.patch
