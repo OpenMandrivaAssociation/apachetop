@@ -16,6 +16,7 @@ Patch1:		%name-0.7.logfile.patch.bz2
 Patch2:		apachetop-0.12.5-large_logfile.patch
 # gcc4.1 fixes (from Debian)
 Patch3:		apachetop-0.12.6-gcc41.patch
+BuildRoot:	%_tmppath/%name-buildroot
 BuildRequires:	ncurses-devel m4 pcre-devel adns-devel fam-devel readline-devel autoconf2.5
 Requires:	apache
 
