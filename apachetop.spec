@@ -1,6 +1,6 @@
 %define name    apachetop
 %define version 0.12.6
-%define release %mkrel 2
+%define release %mkrel 4
 
 Summary:	Utility to display Apache logs with a top-like interface
 Name:		%name
@@ -11,14 +11,19 @@ Group:		Monitoring
 URL:		http://www.webta.org/projects/apachetop/
 Source0:	http://www.webta.org/apachetop/%name-%version.tar.bz2
 # mandrivaize default logfile
-Patch1:		%name-0.7.logfile.patch.bz2
+Patch1:		%name-0.12.6-logfile.patch
 # support logfiles over 2GB (from Debian)
 Patch2:		apachetop-0.12.5-large_logfile.patch
 # gcc4.1 fixes (from Debian)
 Patch3:		apachetop-0.12.6-gcc41.patch
-BuildRoot:	%_tmppath/%name-buildroot
-BuildRequires:	ncurses-devel m4 pcre-devel adns-devel fam-devel readline-devel autoconf2.5
+BuildRequires:	ncurses-devel
+BuildRequires:	m4
+BuildRequires:	pcre-devel
+BuildRequires:	adns-devel
+BuildRequires:	readline-devel
+BuildRequires:	autoconf2.5
 Requires:	apache
+BuildRoot:	%_tmppath/%name-%version
 
 %description
 ApacheTop: top-like display of Apache logs.
@@ -40,7 +45,7 @@ fields in combined) and generates human-parsable output in realtime.
 
 
 %install
-if [ -d $RPM_BUILD_ROOT ]; then rm -r $RPM_BUILD_ROOT; fi
+rm -rf %{buildroot}
 %makeinstall
 
 # 0.7: remove manpage, not usefull yet, read readme instead
@@ -48,8 +53,7 @@ rm %{buildroot}%{_mandir}/man1/*
 
 
 %clean
-if [ -d $RPM_BUILD_ROOT ]; then rm -r $RPM_BUILD_ROOT; fi
-
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,)
