@@ -1,6 +1,6 @@
 %define name    apachetop
 %define version 0.12.6
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary:	Utility to display Apache logs with a top-like interface
 Name:		%name
@@ -16,6 +16,8 @@ Patch1:		%name-0.12.6-logfile.patch
 Patch2:		apachetop-0.12.5-large_logfile.patch
 # gcc4.1 fixes (from Debian)
 Patch3:		apachetop-0.12.6-gcc41.patch
+# fix some error
+Patch4:     apachetop-0.12.6-buffer_overflow.patch
 BuildRequires:	ncurses-devel
 BuildRequires:	m4
 BuildRequires:	pcre-devel
@@ -38,6 +40,7 @@ fields in combined) and generates human-parsable output in realtime.
 %patch1 -p1 -b .log
 %patch2 -p1 -b .large
 %patch3 -p1 -b .gcc41
+%patch4 -p0
 
 %build
 %configure2_5x
