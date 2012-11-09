@@ -1,0 +1,13 @@
+--- ./src/resolver.h~	2006-03-18 18:43:39.000000000 +0000
++++ ./src/resolver.h	2006-03-18 18:43:43.000000000 +0000
+@@ -10,8 +10,8 @@
+ class Resolver
+ {
+ 	public:
+-	Resolver::Resolver(void);
+-	Resolver::~Resolver(void);
++	Resolver(void);
++	~Resolver(void);
+ 	int add_request(char *request, enum resolver_action act);
+ 
+ 

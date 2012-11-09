@@ -1,0 +1,21 @@
+Index: src/apachetop.cc
+===================================================================
+--- src/apachetop.cc
++++ src/apachetop.cc	2009-04-23 22:33:06.000000000 +0200
+@@ -3,6 +3,7 @@
+ **
+ */
+ #include "apachetop.h"
++#include <limits.h>
+ 
+ /* die and report why */
+ #define DIE(msg) fprintf(stderr, "%s: %s\n", msg, strerror(errno)); catchsig(1);
+@@ -958,7 +959,7 @@
+ 	int i, fd, input_element = -1;
+ 	struct stat sb;
+ 	struct input *this_file;
+-	char realfile[MAXPATHLEN];
++	char realfile[PATH_MAX];
+ 
+ 	/* if realpath cannot resolve the file, give up */
+ 	if ((realpath(filename, realfile) == NULL))

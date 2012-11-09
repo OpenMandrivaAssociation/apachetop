@@ -1,0 +1,15 @@
+diff -u apachetop-0.12.5/src/apachetop.h apachetop-0.12.5/src/apachetop.h
+--- apachetop-0.12.5/src/apachetop.h
++++ apachetop-0.12.5/src/apachetop.h
+@@ -5,6 +5,11 @@
+ # include "config.h"
+ #endif
+ 
++#undef _FILE_OFFSET_BITS
++#undef _LARGE_FILES
++#define _FILE_OFFSET_BITS 64
++#define _LARGE_FILES 1
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <ctype.h>
