@@ -63,3 +63,78 @@ rm -rf %{buildroot}
 %_bindir/*
 #%_mandir/man1/*
 %doc AUTHORS LICENSE README ChangeLog TODO
+
+
+%changelog
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 0.12.6-7mdv2011.0
++ Revision: 616568
+- the mass rebuild of 2010.0 packages
+
+* Thu Sep 10 2009 Thierry Vignaud <tv@mandriva.org> 0.12.6-6mdv2010.0
++ Revision: 436654
+- rebuild
+
+  + Michael Scherer <misc@mandriva.org>
+    - fix buffer overflow error
+
+* Sat Feb 28 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.12.6-4mdv2009.1
++ Revision: 345951
+- rebuild for latest readline
+- rediff fuzzy patches
+
+* Thu Jun 19 2008 Thierry Vignaud <tv@mandriva.org> 0.12.6-2mdv2009.0
++ Revision: 226159
+- rebuild
+
+* Thu Dec 20 2007 Olivier Blin <oblin@mandriva.com> 0.12.6-1mdv2008.1
++ Revision: 135823
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - s/Mandrake/Mandriva/
+
+* Sat Apr 21 2007 Pascal Terjan <pterjan@mandriva.org> 0.12.6-1mdv2008.0
++ Revision: 16518
+- 0.12.6 (security update)
+- Change URL as the original author no longer maintains it
+- Add P1 from debian for large logfiles support
+- Add P2 from debian for gcc4.1 support
+- Use autoconf 2.5
+- Import apachetop
+
+
+
+
+* Thu Jun 23 2005 Pascal Terjan <pterjan@mandrake.org> 0.12.5-3mdk
+- BuildRequires readline-devel
+
+* Thu Feb 10 2005 Oden Eriksson <oeriksson@mandrakesoft.com> 0.12.5-2mdk
+- rebuilt against new readline libs
+
+* Tue Dec 14 2004 Pascal Terjan <pterjan@mandrake.org> 0.12.5-1mdk
+- 0.12.5
+- Drop patch2 (merged upstream)
+
+* Sun Jul 25 2004 Pascal Terjan <pterjan@mandrake.org> 0.12-1mdk
+- 0.12
+- updated patch2 (gcc 3.4)
+
+* Fri Jul 09 2004 Michael Scherer <misc@mandrake.org> 0.9-2mdk
+- rebuild for new gcc
+ 
+* Wed Jan 07 2004 Pascal Terjan <pterjan@mandrake.org> 0.9-1mdk
+- 0.9
+
+* Tue Dec 09 2003 Marcel Pol <mpol@mandrake.org> 0.8.1-1mdk
+- 0.8.1
+
+* Fri Nov 21 2003 Marcel Pol <mpol@gmx.net> 0.8-1mdk
+- 0.8
+
+* Sat Nov 15 2003 Olivier Thauvin <thauvin@aerov.jussieu.fr> 0.7-2mdk
+- From Franck Villaume <fvill@freesuf.fr>
+	- add m4 to BuildRequires
+
+* Thu Oct 16 2003 Marcel Pol <mpol@gmx.net> 0.7-1mdk
+- initial mandrake package
