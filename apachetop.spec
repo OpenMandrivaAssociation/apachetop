@@ -1,6 +1,6 @@
 %define name    apachetop
 %define version 0.12.6
-%define release %mkrel 7
+%define release 8
 
 Summary:	Utility to display Apache logs with a top-like interface
 Name:		%name
