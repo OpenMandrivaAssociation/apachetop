@@ -8,7 +8,7 @@ Version:	%version
 Release:	%release
 License:	BSD
 Group:		Monitoring
-URL:		http://www.webta.org/projects/apachetop/
+URL:		https://www.webta.org/projects/apachetop/
 Source0:	http://www.webta.org/apachetop/%name-%version.tar.bz2
 # mandrivaize default logfile
 Patch1:		%name-0.12.6-logfile.patch
